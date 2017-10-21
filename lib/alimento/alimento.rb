@@ -9,5 +9,9 @@ class Alimentos
         @glucidos = glucidosA
         @lipidos = lipidosA
     end
+    
+    def to_s
+        s = "#{@nombre}\t#{@proteinas}\t#{@glucidos}\t#{@lipidos}"
+    end 
 
 end 

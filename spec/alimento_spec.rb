@@ -43,7 +43,7 @@ RSpec.describe Alimento do
   end
   
   it "Existe un metodo para obtener el alimento formateado " do
-    expect(@huevoFrito).to respond_to(to_s)
+    expect(@huevoFrito).to respond_to(:to_s)
     expect(@huevoFrito.to_s).to eq("Huevo Frito\t14.1\t0.0\t19.5")
   end 
   
