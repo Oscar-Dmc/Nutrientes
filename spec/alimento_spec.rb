@@ -42,4 +42,9 @@ RSpec.describe Alimento do
     expect(@huevoFrito.lipidos).to eq(19.5)
   end
   
+  it "Existe un metodo para obtener el alimento formateado " do
+    expect(@huevoFrito).to respond_to(to_s)
+    expect(@huevoFrito.to_s).to eq("Huevo Frito\t14.1\t0.0\t19.5")
+  end 
+  
 end
