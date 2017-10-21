@@ -7,7 +7,7 @@ RSpec.describe Alimento do
   end
 
   before :each do
-    @huevoFrito = Alimentos.new("Huevo Frito", 14.1, 0.0)
+    @huevoFrito = Alimentos.new("Huevo Frito", 14.1, 0.0, 19.5)
   end
   
   it "Existe un nombre para el alimento" do
@@ -21,5 +21,9 @@ RSpec.describe Alimento do
   it "Existe la cantidad de glucidos del alimento en gramos" do
     expect(@huevoFrito.glucidos).not_to be nil
   end
+  
+  it "Existe la candidad de grasas del alimento en gramos." do
+    expect(@huevoFrito.lipidos).not_to be nil 
+  end 
   
 end
