@@ -47,9 +47,9 @@ RSpec.describe Alimento do
     expect(@huevoFrito.to_s).to eq("Huevo Frito\t14.1\t0.0\t19.5")
   end 
   
-  it "Exite un metodo para obtener el valor energetico de un alimento" do 
+  it "Existe un metodo para obtener el valor energetico de un alimento" do 
     expect(@huevoFrito).to respond_to(:v_energetico)
-    expect(@huevoFrito.v_energetico).to eq(175.5)
+    expect(@huevoFrito.v_energetico).to eq(231.9)
   end 
   
 end
