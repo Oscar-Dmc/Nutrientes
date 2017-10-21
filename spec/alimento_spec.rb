@@ -1,4 +1,5 @@
 require "spec_helper"
+require "./lib/alimento/alimento.rb"
 
 RSpec.describe Alimento do
   it "Tiene una version" do
@@ -6,7 +7,7 @@ RSpec.describe Alimento do
   end
 
   before :each do
-    @huevoFrito = Alimento.new("Huevo Frito")
+    @huevoFrito = Alimentos.new("Huevo Frito")
   end
   
   it "Existe un nombre para el alimento" do
