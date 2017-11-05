@@ -110,6 +110,31 @@ class Lista
         end
     end
     
+    def extrae_pos(indice)
+        if !vacia
+            pos = 0
+            aux = @cabeza
+            if indice - 1 == 0
+                aux = extrae_cabeza
+            end
+            if indice == size
+                aux = extrae_cola
+            end
+            if indice - 1 > 0 &&  indice < size 
+                while pos !=  indice - 1
+                  pos = pos + 1
+                  aux = aux.siguiente
+                end
+                auxAnt = aux.anterior
+                auxSig = aux.siguiente
+                auxAnt[:siguiente] = auxSig
+                auxSig[:anterior] = auxAnt
+                @size = @size - 1
+            end 
+        end
+        aux
+    end
+    
     def vacia
         if size==0
             true
