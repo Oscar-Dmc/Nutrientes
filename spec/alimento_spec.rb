@@ -95,6 +95,16 @@ RSpec.describe Lista do
     
     @lista.insertar_cabeza(@nodoA3)
     expect(@lista.cabeza).to eq(@nodoA3)
+    expect(@lista.size).to eq(2)
+  end 
+  
+  it "Se puede insertar un elemento por la cola" do
+    @lista.insertar_cola(@nodoA3)
+    expect(@lista.cola).to eq(@nodoA3)
+    
+    @lista.insertar_cola(@nodoA2)
+    expect(@lista.cola).to eq(@nodoA2)
+    expect(@lista.size).to eq(2)
   end 
   
 end
