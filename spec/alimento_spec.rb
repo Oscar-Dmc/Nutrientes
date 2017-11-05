@@ -135,8 +135,9 @@ RSpec.describe Lista do
     @lista.insertar_cabeza(@nodoA1)
     @lista.insertar_mul([@nodoA3, @nodoA4], 2)
     
-    @lista.extrae_cabeza()
+    @lista.extrae_cabeza
     expect(@lista.cabeza).to eq(@nodoA3)
+    expect(@lista.size).to eq(3)
   end 
   
 end

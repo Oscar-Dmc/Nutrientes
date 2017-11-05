@@ -77,6 +77,22 @@ class Lista
         end 
     end
     
+    def extrae_cabeza
+        if !vacia
+            if @cabeza == @cola
+                aux = @cabeza
+                @cabeza = nil
+                @cola = nil
+            else
+                aux = @cabeza
+                @cabeza = @cabeza.siguiente
+                @cabeza[:anterior] = nil
+            end 
+            @size = @size - 1
+            aux
+        end
+    end 
+    
     def vacia
         if size==0
             true
