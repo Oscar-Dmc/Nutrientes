@@ -60,10 +60,12 @@ RSpec.describe Lista do
     #Alimentos:
     @huevoFrito = Alimentos.new("Huevo Frito", 14.1, 0.0, 19.5)
     @lecheVaca = Alimentos.new("Leche vaca", 3.3, 4.8, 3.2)
-    @Yogurt = Alimentos.new("Yogurt", 3.8, 4.9, 3.8)
+    @yogurt = Alimentos.new("Yogurt", 3.8, 4.9, 3.8)
     
     #Nodos: 
-    @nodo1 = Nodo.new(@lecheVaca, @yogurt, @huevoFrito)
+    @nodoA1 = Nodo.new(@huevoFrito, @nodoA2, nil)
+    @nodoA3 = Nodo.new(@yogurt, nil, @nodoA2)
+    @nodoA2 = Nodo.new(@lecheVaca, @nodoA3, @nodoA1)
     
     #Listas: 
     @lista = Lista.new()
@@ -74,9 +76,17 @@ RSpec.describe Lista do
   end 
   
   it "Debe existir un Nodo de la lista con sus datos, su siguiente y su previo" do
-    expect(@nodo1.valor).to eq(@lecheVaca)
-    expect(@nodo1.siguiente).to eq(@yogurt)
-    expect(@nodo1.anterior).to eq(@huevoFrito)
+    expect(@nodoA2.valor).to eq(@lecheVaca)
+    expect(@nodoA2.siguiente).to eq(@nodoA3)
+    expect(@nodoA2.anterior).to eq(@nodoA1)
+  end 
+  
+  it "Debe existir una Lista con su cabeza y su cola" do 
+    @lista.cabeza = @nodoA1
+    @lista.cola = @nodoA3
+    
+    expect(@lista.cabeza).to eq(@nodoA1)
+    expect(@lista.cola).to eq(@nodoA3)
   end 
   
 end
