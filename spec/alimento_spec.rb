@@ -53,3 +53,12 @@ RSpec.describe Alimento do
   end 
   
 end
+
+RSpec.describe Lista do
+  
+  it "Lista vacia" do 
+    expect(@lista.size).to eq(0)
+  end 
+  
+end
+

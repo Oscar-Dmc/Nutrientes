@@ -12,12 +12,12 @@ class Alimentos
     
     def to_s
         s = "#{@nombre}\t#{@proteinas}\t#{@glucidos}\t#{@lipidos}"
-        return s
+        
     end
     
     def v_energetico
         valor = (@proteinas * 4) + (@glucidos * 4) + (@lipidos * 9)
-        return valor
+        
     end 
 
 end 
