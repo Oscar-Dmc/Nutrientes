@@ -24,6 +24,21 @@ class Lista
         @size = @size + 1 
     end
     
+    def insertar_cola(nodo)
+        if vacia
+            nodo[:siguiente] = nil
+            nodo[:anterior] = nil
+            @cabeza = nodo
+            @cola = nodo
+        else 
+            nodo[:siguiente] = nil
+            nodo[:anterior] = @cola
+            @cola[:siguiente] = nodo
+            @cola = nodo
+        end
+        @size = @size + 1
+    end
+    
     def vacia
         if size==0
             true
