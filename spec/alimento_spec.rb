@@ -89,5 +89,10 @@ RSpec.describe Lista do
     expect(@lista.cola).to eq(@nodoA3)
   end 
   
+  it "Se puede insertar un elemento por el principio de la Lista" do 
+    @lista.insertar_cabeza(@nodoA2)
+    expect(@lista.cabeza).to eq(@nodoA2)
+  end 
+  
 end
 
