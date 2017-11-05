@@ -1,4 +1,4 @@
-Nodo = Struct.new(:valor, :siguiente, :anterior)
+Nodo = Struct.new(:valor, :siguiente, :anterior) 
 
 class Lista
     attr_accessor :cabeza, :cola, :size
