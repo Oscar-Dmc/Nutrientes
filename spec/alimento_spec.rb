@@ -63,7 +63,7 @@ RSpec.describe Lista do
     @yogurt = Alimentos.new("Yogurt", 3.8, 4.9, 3.8)
     
     #Nodos: 
-    @nodoA1 = Nodo.new(@huevoFrito, @nodoA2, nil)
+    @nodoA1 = Nodo.new(@huevoFrito, @nodoA2)
     @nodoA3 = Nodo.new(@yogurt, nil, @nodoA2)
     @nodoA2 = Nodo.new(@lecheVaca, @nodoA3, @nodoA1)
     
@@ -92,6 +92,9 @@ RSpec.describe Lista do
   it "Se puede insertar un elemento por el principio de la Lista" do 
     @lista.insertar_cabeza(@nodoA2)
     expect(@lista.cabeza).to eq(@nodoA2)
+    
+    @lista.insertar_cabeza(@nodoA3)
+    expect(@lista.cabeza).to eq(@nodoA3)
   end 
   
 end

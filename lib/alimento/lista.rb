@@ -17,7 +17,7 @@ class Lista
             @cola = nodo
         else
             nodo[:siguiente] = @cabeza
-            @head[:anterior] = nodo
+            @cabeza[:anterior] = nodo
             nodo[:anterior] = nil
             @cabeza = nodo
         end
