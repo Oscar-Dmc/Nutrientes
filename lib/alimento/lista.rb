@@ -54,6 +54,7 @@ class Lista
                     nodo[:siguiente] = aux.siguiente
                     nodo[:anterior] = aux
                     aux[:siguiente] = nodo
+                    pos = pos + 1 
                 end
                 if pos == (indice - 1)
                     aux = nodo.siguiente
@@ -92,6 +93,22 @@ class Lista
             aux
         end
     end 
+    
+    def extrae_cola
+        if !vacia
+            if @cola == @cabeza
+                aux = @cola
+                @cabeza = nil
+                @cola = nil
+            else
+                aux = @cola
+                @cola = @cola.anterior
+                @cola[:siguiente] = nil
+            end 
+            @size = @size - 1
+            aux
+        end
+    end
     
     def vacia
         if size==0
