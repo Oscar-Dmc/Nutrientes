@@ -140,5 +140,15 @@ RSpec.describe Lista do
     expect(@lista.size).to eq(3)
   end 
   
+  it "Se extrae el ultimo elemento" do 
+    @lista.insertar_cabeza(@nodoA2)
+    @lista.insertar_cabeza(@nodoA1)
+    @lista.insertar_mul([@nodoA3, @nodoA4], 2)
+    
+    @lista.extrae_cola
+    expect(@lista.cola).to eq(@nodoA4)
+    expect(@lista.size).to eq(3)
+  end
+  
 end
 
