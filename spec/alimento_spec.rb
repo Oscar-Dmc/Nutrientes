@@ -57,11 +57,26 @@ end
 
 RSpec.describe Lista do
   before :each do 
+    #Alimentos:
+    @huevoFrito = Alimentos.new("Huevo Frito", 14.1, 0.0, 19.5)
+    @lecheVaca = Alimentos.new("Leche vaca", 3.3, 4.8, 3.2)
+    @Yogurt = Alimentos.new("Yogurt", 3.8, 4.9, 3.8)
+    
+    #Nodos: 
+    @nodo1 = Nodo.new(@lecheVaca, @yogurt, @huevoFrito)
+    
+    #Listas: 
     @lista = Lista.new()
   end 
   
   it "Lista vacia" do 
     expect(@lista.size).to eq(0)
+  end 
+  
+  it "Debe existir un Nodo de la lista con sus datos, su siguiente y su previo" do
+    expect(@nodo1.valor).to eq(@lecheVaca)
+    expect(@nodo1.siguiente).to eq(@yogurt)
+    expect(@nodo1.anterior).to eq(@huevoFrito)
   end 
   
 end
