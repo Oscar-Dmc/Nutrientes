@@ -107,5 +107,13 @@ RSpec.describe Lista do
     expect(@lista.size).to eq(2)
   end 
   
+  it "Se puede insertar un elemento en la pos x" do 
+    @lista.insertar_cabeza(@nodoA2)
+    @lista.insertar_cabeza(@nodoA1)
+    @lista.insertar_pos(@nodoA3, 1)
+  
+    expect(@lista.cabeza.siguiente).to eq(@nodoA3)
+  end 
+  
 end
 
