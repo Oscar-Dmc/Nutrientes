@@ -61,11 +61,14 @@ RSpec.describe Lista do
     @huevoFrito = Alimentos.new("Huevo Frito", 14.1, 0.0, 19.5)
     @lecheVaca = Alimentos.new("Leche vaca", 3.3, 4.8, 3.2)
     @yogurt = Alimentos.new("Yogurt", 3.8, 4.9, 3.8)
+    @cerdo  = Alimentos.new("Cerdo", 21.5, 0.0, 6.3)
+
     
     #Nodos: 
     @nodoA1 = Nodo.new(@huevoFrito, @nodoA2)
     @nodoA3 = Nodo.new(@yogurt, nil, @nodoA2)
     @nodoA2 = Nodo.new(@lecheVaca, @nodoA3, @nodoA1)
+    @nodoA4 = Nodo.new(@cerdo)
     
     #Listas: 
     @lista = Lista.new()
@@ -114,6 +117,17 @@ RSpec.describe Lista do
   
     expect(@lista.cabeza.siguiente).to eq(@nodoA3)
     expect(@lista.size).to eq(3)
+  end 
+  
+  it "Se pueden insertar varios elementos" do 
+    @lista.insertar_cabeza(@nodoA2)
+    @lista.insertar_cabeza(@nodoA1)
+    @lista.insertar_mul([@nodoA3, @nodoA4], 2)
+    
+    expect(@lista.cabeza.siguiente).to eq(@nodoA3)
+    expect(@lista.cabeza.siguiente.siguiente).to eq(@nodoA4)
+    expect(@lista.cola).to eq(@nodoA2)
+    expect(@lista.size).to eq(4)
   end 
   
 end
