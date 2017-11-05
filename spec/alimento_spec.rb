@@ -1,5 +1,6 @@
 require "spec_helper"
 require "./lib/alimento/alimento.rb"
+require "./lib/alimento/lista.rb"
 
 RSpec.describe Alimento do
   it "Tiene una version" do
@@ -55,6 +56,9 @@ RSpec.describe Alimento do
 end
 
 RSpec.describe Lista do
+  before :each do 
+    @lista = Lista.new()
+  end 
   
   it "Lista vacia" do 
     expect(@lista.size).to eq(0)
