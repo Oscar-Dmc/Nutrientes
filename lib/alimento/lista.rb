@@ -41,9 +41,7 @@ class Lista
     
     def insertar_pos(nodo, indice)
         pos =  0
-       
         aux = @cabeza
-
         if (indice - 1) == 0
             insertar_cabeza(nodo)
             indice = 0
@@ -70,6 +68,13 @@ class Lista
             error = "La posicion se encuentra fuera de rango"
             error
         end
+    end
+    
+    def insertar_mul(nodos, indice)
+        for i in 0.. (nodos.length - 1)
+            insertar_pos(nodos[i], indice)
+            indice = indice + 1;
+        end 
     end
     
     def vacia

@@ -130,5 +130,14 @@ RSpec.describe Lista do
     expect(@lista.size).to eq(4)
   end 
   
+  it "Se extrae el primer elemento" do
+    @lista.insertar_cabeza(@nodoA2)
+    @lista.insertar_cabeza(@nodoA1)
+    @lista.insertar_mul([@nodoA3, @nodoA4], 2)
+    
+    @lista.extrae_cabeza()
+    expect(@lista.cabeza).to eq(@nodoA3)
+  end 
+  
 end
 
