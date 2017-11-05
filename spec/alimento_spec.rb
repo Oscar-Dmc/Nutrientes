@@ -150,5 +150,14 @@ RSpec.describe Lista do
     expect(@lista.size).to eq(3)
   end
   
+  it "Se extrae la posicion x" do 
+    @lista.insertar_cabeza(@nodoA2)
+    @lista.insertar_cabeza(@nodoA1)
+    @lista.insertar_mul([@nodoA3, @nodoA4], 2)
+    
+    expect(@lista.extrae_pos(3)).to eq(@nodoA4)
+    expect(@lista.size).to eq(3)
+  end 
+  
 end
 
