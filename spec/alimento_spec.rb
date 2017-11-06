@@ -175,5 +175,10 @@ RSpec.describe AlimentoC do
     expect(@HuevoFrito).to respond_to(:v_energetico)
     expect(@HuevoFrito.v_energetico).to eq(231.9)
   end 
+  
+  it "Se puede obtener el alimento formateado " do
+    expect(@HuevoFrito).to respond_to(:to_s)
+    expect(@HuevoFrito.to_s).to eq("Huevo Frito\t14.1\t0.0\t19.5")
+  end 
 end 
 
