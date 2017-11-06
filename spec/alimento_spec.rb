@@ -170,5 +170,10 @@ RSpec.describe AlimentoC do
   it "Existe la jerarquia Alimentos < AlimentoC " do 
     expect(@HuevoFrito).to be_kind_of(Alimentos)
   end 
+  
+  it "Responde correctamente a metodos de la clase padre" do
+    expect(@HuevoFrito).to respond_to(:v_energetico)
+    expect(@HuevoFrito.v_energetico).to eq(231.9)
+  end 
 end 
 
