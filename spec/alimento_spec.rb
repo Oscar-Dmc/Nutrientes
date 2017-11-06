@@ -1,6 +1,7 @@
 require "spec_helper"
 require "./lib/alimento/alimento.rb"
 require "./lib/alimento/lista.rb"
+require "./lib/alimento/alimentoC.rb"
 
 RSpec.describe Alimento do
   it "Tiene una version" do
