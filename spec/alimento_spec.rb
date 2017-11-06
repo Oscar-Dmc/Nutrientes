@@ -171,6 +171,10 @@ RSpec.describe AlimentoC do
     expect(@HuevoFrito).to be_kind_of(Alimentos)
   end 
   
+  it "Se puede accedder al grupo del alimento " do
+    expect(@HuevoFrito.grupo).to eq("Huevos, lacteos y helados")
+  end 
+  
   it "Responde correctamente a metodos de la clase padre" do
     expect(@HuevoFrito).to respond_to(:v_energetico)
     expect(@HuevoFrito.v_energetico).to eq(231.9)
@@ -181,4 +185,11 @@ RSpec.describe AlimentoC do
     expect(@HuevoFrito.to_s).to eq("Huevo Frito\t14.1\t0.0\t19.5")
   end 
 end 
+
+RSpec.describe Lista do
+  before :each do 
+    @HuevoFrito = AlimentoC.new("Huevo Frito", 14.1, 0.0, 19.5, "Huevos, lacteos y helados" )
+  end 
+
+end
 
