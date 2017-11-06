@@ -197,7 +197,7 @@ RSpec.describe Lista do
     
     @nodo1 = Nodo.new(@HuevoFrito)
     @nodo2 = Nodo.new(@LecheVaca)
-    @nodo3 = Nodo.new(@Yogurt)
+    @nodo3 = Nodo.new(@Yogurt, nil, nil)
     @nodo4 = Nodo.new(@Cerdo)
     @nodo5 = Nodo.new(@Ternera)
     @nodo6 = Nodo.new(@Pollo)
@@ -205,14 +205,11 @@ RSpec.describe Lista do
     @lista = Lista.new()
     @lista.insertar_cola(@nodo1)
     @lista.insertar_cola(@nodo2)
+    @lista.insertar_cola(@nodo3)
     @lista.insertar_cola(@nodo4)
     @lista.insertar_cola(@nodo5)
     @lista.insertar_cola(@nodo6)
   end 
 
-  it "Se puede insertar un elemento segun el grupo al final del mismo" do
-    @lista.insertar_por_grupo(@nodo3)
-    expect(@nodo3).to eq(@lista.cabeza.siguiente.siguiente.siguiente)
-  end 
 end
 
