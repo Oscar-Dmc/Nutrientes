@@ -189,7 +189,30 @@ end
 RSpec.describe Lista do
   before :each do 
     @HuevoFrito = AlimentoC.new("Huevo Frito", 14.1, 0.0, 19.5, "Huevos, lacteos y helados" )
+    @LecheVaca = AlimentoC.new("Leche vaca", 3.3, 4.8, 3.2, "Huevos, lacteos y helados")
+    @Yogur = AlimentoC.new("Yogurt", 3.8, 4.9, 3.8, "Huevos, lacteos y helados")
+    @Cerdo = AlimentoC.new("Cerdo", 21.5, 0.0, 6.3, "Carnes y derivados")
+    @Ternera = AlimentoC.new("Ternera", 21.1, 0.0, 3.1, "Carnes y derivados")
+    @Pollo = AlimentoC.new("Pollo", 20.6, 0.0, 5.6, "Carnes y derivados")
+    
+    @nodo1 = Nodo.new(@HuevoFrito)
+    @nodo2 = Nodo.new(@LecheVaca)
+    @nodo3 = Nodo.new(@Yogurt)
+    @nodo4 = Nodo.new(@Cerdo)
+    @nodo5 = Nodo.new(@Ternera)
+    @nodo6 = Nodo.new(@Pollo)
+    
+    @lista = Lista.new()
+    @lista.insertar_cola(@nodo1)
+    @lista.insertar_cola(@nodo2)
+    @lista.insertar_cola(@nodo4)
+    @lista.insertar_cola(@nodo5)
+    @lista.insertar_cola(@nodo6)
   end 
 
+  it "Se puede insertar un elemento segun el grupo al final del mismo" do
+    @lista.insertar_por_grupo(@nodo3)
+    expect(@nodo3).to eq(@lista.cabeza.siguiente.siguiente.siguiente)
+  end 
 end
 
