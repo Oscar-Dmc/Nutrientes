@@ -8,12 +8,12 @@ RSpec.describe Alimento do
   end
 
   before :each do
-    @huevoFrito = Alimentos.new("Huevo Frito", 14.1, 0.0, 19.5)
+    @huevoFrito = Alimentos.new(14.1, 0.0, 19.5)
   end
   
-  it "Existe un nombre para el alimento" do
-    expect(@huevoFrito.nombre).not_to be nil
-  end
+  #it "Existe un nombre para el alimento" do
+    #expect(@huevoFrito.nombre).not_to be nil
+  #end
   
   it "Existe la cantidad de proteinas en gramos" do 
     expect(@huevoFrito.proteinas).not_to be nil
@@ -27,9 +27,9 @@ RSpec.describe Alimento do
     expect(@huevoFrito.lipidos).not_to be nil 
   end 
   
-  it "Existe un metodo para obtener el nombre " do 
-    expect(@huevoFrito.nombre).to eq("Huevo Frito")
-  end
+  #it "Existe un metodo para obtener el nombre " do 
+  #  expect(@huevoFrito.nombre).to eq("Huevo Frito")
+  #end
   
   it "Existe un metodo para obtener la cantidad de proteinas" do 
     expect(@huevoFrito.proteinas).to eq(14.1)
@@ -45,7 +45,7 @@ RSpec.describe Alimento do
   
   it "Existe un metodo para obtener el alimento formateado " do
     expect(@huevoFrito).to respond_to(:to_s)
-    expect(@huevoFrito.to_s).to eq("Huevo Frito\t14.1\t0.0\t19.5")
+    expect(@huevoFrito.to_s).to eq("14.1\t0.0\t19.5")
   end 
   
   it "Existe un metodo para obtener el valor energetico de un alimento" do 
@@ -58,10 +58,10 @@ end
 RSpec.describe Lista do
   before :each do 
     #Alimentos:
-    @huevoFrito = Alimentos.new("Huevo Frito", 14.1, 0.0, 19.5)
-    @lecheVaca = Alimentos.new("Leche vaca", 3.3, 4.8, 3.2)
-    @yogurt = Alimentos.new("Yogurt", 3.8, 4.9, 3.8)
-    @cerdo  = Alimentos.new("Cerdo", 21.5, 0.0, 6.3)
+    @huevoFrito = Alimentos.new(14.1, 0.0, 19.5)
+    @lecheVaca = Alimentos.new(3.3, 4.8, 3.2)
+    @yogurt = Alimentos.new(3.8, 4.9, 3.8)
+    @cerdo  = Alimentos.new(21.5, 0.0, 6.3)
 
     
     #Nodos: 
