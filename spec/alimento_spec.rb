@@ -182,7 +182,7 @@ RSpec.describe AlimentoC do
   
   it "Se puede obtener el alimento formateado " do
     expect(@HuevoFrito).to respond_to(:to_s)
-    expect(@HuevoFrito.to_s).to eq("Huevo Frito\t14.1\t0.0\t19.5")
+    expect(@HuevoFrito.to_s).to eq("Huevo Frito\t14.1\t0.0\t19.5\tHuevos, lacteos y helados")
   end 
 end 
 
@@ -210,6 +210,10 @@ RSpec.describe Lista do
     @lista.insertar_cola(@nodo5)
     @lista.insertar_cola(@nodo6)
   end 
-
+    
+    it "Lista reponde a un metodo to_s para mostrar la lista" do
+      expect(@lista).to respond_to(:to_s)
+      puts @lista.to_s
+    end 
 end
 

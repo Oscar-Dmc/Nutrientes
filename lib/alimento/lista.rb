@@ -135,6 +135,16 @@ class Lista
         aux
     end
     
+    def to_s
+        aux = @cabeza
+        s = ""
+        while aux.siguiente != nil
+            s += aux.valor.to_s + "\n"
+            aux =  aux.siguiente
+        end
+        s
+    end 
+    
     def vacia
         if size==0
             true

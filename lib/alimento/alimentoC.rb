@@ -12,6 +12,7 @@ class AlimentoC < Alimentos
     def to_s
         s =  "#{@nombre}\t"
         s += super.to_s
+        s += "\t#{@grupo}"
         s
     end
 end
