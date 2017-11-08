@@ -142,7 +142,8 @@ class Lista
             s += aux.valor.to_s + "\n"
             aux =  aux.siguiente
         end
-        s
+        s += aux.valor.to_s
+        
     end 
     
     def vacia
