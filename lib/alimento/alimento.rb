@@ -19,7 +19,15 @@ class Alimentos
         end 
     end 
     
-
+    def == (otro)
+        if otro.is_a?Alimentos
+            @lipidos == otro.lipidos && 
+            @glucidos == otro.glucidos &&
+            @proteinas == otro.proteinas
+        else
+            false
+        end
+    end
     
     def v_energetico
         valor = (@proteinas * 4) + (@glucidos * 4) + (@lipidos * 9)

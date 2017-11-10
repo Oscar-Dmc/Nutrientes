@@ -271,6 +271,24 @@ RSpec.describe Alimento do
     @Bacalao = AlimentoC.new("Bacalao",  17.7, 0.0, 0.4, "Pescados y mariscos")
     @YogurtLimon = AlimentoC.new("Yogurt de Limon", 3.8, 4.9, 3.8, "Huevos, lacteos y helados")
     
+    @nodo1 = Nodo.new(@HuevoFrito)
+    @nodo2 = Nodo.new(@LecheVaca)
+    @nodo3 = Nodo.new(@Yogurt)
+    @nodo4 = Nodo.new(@Cerdo)
+    @nodo5 = Nodo.new(@Ternera)
+    @nodo6 = Nodo.new(@Pollo)
+    @nodo7 = Nodo.new(@Bacalao)
+    @nodo8 = Nodo.new(@YogurtLimon)
+    
+    @lista = Lista.new()
+    @lista.insertar_cola(@nodo1)
+    @lista.insertar_cola(@nodo2)
+    @lista.insertar_cola(@nodo3)
+    @lista.insertar_cola(@nodo4)
+    @lista.insertar_cola(@nodo5)
+    @lista.insertar_cola(@nodo6)
+    @lista.insertar_cola(@nodo7)
+    @lista.insertar_cola(@nodo8)
   end
 
   it "El Huevo Frito tiene mas lipidos que la Leche de Vaca" do
@@ -284,5 +302,10 @@ RSpec.describe Alimento do
   it "El Yogurt y el Yogurt de limon son iguales en terminos de valores" do 
     expect(@Yogurt == @YogurtLimon).to eq(true)
   end
+  
+  it "#Pruebas para utilizar el Mixin Enumerable - Funcion maximo en la clase lista" do
+    expect(@lista.max).to eq(@nodo1)
+  end 
+  
 end 
 
