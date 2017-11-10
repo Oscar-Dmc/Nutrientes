@@ -278,5 +278,12 @@ RSpec.describe Alimento do
   
   end
 
+  it "El Huevo Frito tiene mas lipidos que la Leche de Vaca" do
+    expect(@HuevoFrito > @LecheVaca).to eq(true)
+  end 
+  
+  it "El Pollo tiene menos lipidos que el Cerdo" do 
+    expect(@Pollo < @Cerdo).to eq(true)
+  end
 end 
 
