@@ -2,6 +2,7 @@ Nodo = Struct.new(:valor, :siguiente, :anterior)
 
 class Lista
     attr_accessor :cabeza, :cola, :size
+    include Enumerable
     
     def initialize
         @cabeza = nil
@@ -152,5 +153,13 @@ class Lista
         else 
             false
         end
+    end
+    
+    def each
+        aux = @cabeza
+        while aux != nil
+            yield aux.valor
+            aux = aux.siguiente
+        end 
     end 
 end 

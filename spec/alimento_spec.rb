@@ -291,11 +291,11 @@ RSpec.describe Alimento do
     @lista.insertar_cola(@nodo8)
   end
 
-  it "El Huevo Frito tiene mas lipidos que la Leche de Vaca" do
+  it "El Huevo Frito tiene mas valor energetico que la Leche de Vaca" do
     expect(@HuevoFrito > @LecheVaca).to eq(true)
   end 
   
-  it "El Pollo tiene menos lipidos que el Cerdo" do 
+  it "El Pollo tiene menos valor energetico que el Cerdo" do 
     expect(@Pollo < @Cerdo).to eq(true)
   end
   
@@ -304,17 +304,17 @@ RSpec.describe Alimento do
   end
   
   it "Pruebas para utilizar el Mixin Enumerable - Funcion maximo en la clase lista" do
-    expect(@lista.max).to eq(@nodo1)
+    expect(@lista.max).to eq(@HuevoFrito)
   end 
   
   it "Pruebas para utilizar el Mixin Enumerable - Funcion minima en la clase lista" do 
-    expect(@lista.max).to eq (@nodo2)
+    expect(@lista.min).to eq (@LecheVaca)
   end 
   
   it "Funcion include" do
-    expect(@lista.include?@nodo1).to eq(true)
-    expect(@lista.include?@nodo5).to eq(true)
-    expect(@lista.include?@nodo7).to eq(true)
+    expect(@lista.include?@HuevoFrito).to eq(true)
+    expect(@lista.include?@LecheVaca).to eq(true)
+    expect(@lista.include?@Pollo).to eq(true)
   end 
   
   it "Funcion count" do 

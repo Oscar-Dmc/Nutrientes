@@ -12,11 +12,15 @@ class Alimentos
     
     def <=> (otro)
         return nil unless otro.is_a?Alimentos #Si el otro objeto no es de tipo Alimentos devuelve nulo
-        if v_energetico < otro.v_energetico
-            return -1
-        else 
-            return 1
-        end 
+        if v_energetico == otro.v_energetico
+            return 0 
+        else
+            if v_energetico < otro.v_energetico
+                return -1
+            else 
+                return 1
+            end
+        end
     end 
     
     def == (otro)
