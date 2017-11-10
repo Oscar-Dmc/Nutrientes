@@ -246,7 +246,6 @@ RSpec.describe Lista do
     @lista.insertar_cola(@nodo9)
     @lista.insertar_cola(@nodo10)
     @lista.insertar_cola(@nodo11)
-    #@lista.insertar_cola(@nodo12)
     @lista.insertar_cola(@nodo13)
     @lista.insertar_cola(@nodo14)
     @lista.insertar_cola(@nodo15)
@@ -265,4 +264,19 @@ RSpec.describe Lista do
       puts @lista.to_s
     end 
 end
+
+
+RSpec.describe Alimento do
+  before :each do 
+    @HuevoFrito = AlimentoC.new("Huevo Frito", 14.1, 0.0, 19.5, "Huevos, lacteos y helados" )
+    @LecheVaca = AlimentoC.new("Leche vaca", 3.3, 4.8, 3.2, "Huevos, lacteos y helados")
+    @Yogurt = AlimentoC.new("Yogurt", 3.8, 4.9, 3.8, "Huevos, lacteos y helados")
+    @Cerdo = AlimentoC.new("Cerdo", 21.5, 0.0, 6.3, "Carnes y derivados")
+    @Ternera = AlimentoC.new("Ternera", 21.1, 0.0, 3.1, "Carnes y derivados")
+    @Pollo = AlimentoC.new("Pollo", 20.6, 0.0, 5.6, "Carnes y derivados")
+    @Bacalao = AlimentoC.new("Bacalao",  17.7, 0.0, 0.4, "Pescados y mariscos")
+  
+  end
+
+end 
 
