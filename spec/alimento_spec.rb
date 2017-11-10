@@ -303,9 +303,23 @@ RSpec.describe Alimento do
     expect(@Yogurt == @YogurtLimon).to eq(true)
   end
   
-  it "#Pruebas para utilizar el Mixin Enumerable - Funcion maximo en la clase lista" do
+  it "Pruebas para utilizar el Mixin Enumerable - Funcion maximo en la clase lista" do
     expect(@lista.max).to eq(@nodo1)
   end 
+  
+  it "Pruebas para utilizar el Mixin Enumerable - Funcion minima en la clase lista" do 
+    expect(@lista.max).to eq (@nodo2)
+  end 
+  
+  it "Funcion include" do
+    expect(@lista.include?@nodo1).to eq(true)
+    expect(@lista.include?@nodo5).to eq(true)
+    expect(@lista.include?@nodo7).to eq(true)
+  end 
+  
+  it "Funcion count" do 
+    expect(@lista.count).to eq(8) 
+  end
   
 end 
 
