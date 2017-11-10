@@ -12,9 +12,6 @@ RSpec.describe Alimento do
     @huevoFrito = Alimentos.new(14.1, 0.0, 19.5)
   end
   
-  #it "Existe un nombre para el alimento" do
-    #expect(@huevoFrito.nombre).not_to be nil
-  #end
   
   it "Existe la cantidad de proteinas en gramos" do 
     expect(@huevoFrito.proteinas).not_to be nil
@@ -28,9 +25,6 @@ RSpec.describe Alimento do
     expect(@huevoFrito.lipidos).not_to be nil 
   end 
   
-  #it "Existe un metodo para obtener el nombre " do 
-  #  expect(@huevoFrito.nombre).to eq("Huevo Frito")
-  #end
   
   it "Existe un metodo para obtener la cantidad de proteinas" do 
     expect(@huevoFrito.proteinas).to eq(14.1)
