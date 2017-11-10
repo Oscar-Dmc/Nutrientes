@@ -269,7 +269,8 @@ RSpec.describe Alimento do
     @Ternera = AlimentoC.new("Ternera", 21.1, 0.0, 3.1, "Carnes y derivados")
     @Pollo = AlimentoC.new("Pollo", 20.6, 0.0, 5.6, "Carnes y derivados")
     @Bacalao = AlimentoC.new("Bacalao",  17.7, 0.0, 0.4, "Pescados y mariscos")
-  
+    @YogurtLimon = AlimentoC.new("Yogurt de Limon", 3.8, 4.9, 3.8, "Huevos, lacteos y helados")
+    
   end
 
   it "El Huevo Frito tiene mas lipidos que la Leche de Vaca" do
@@ -278,6 +279,10 @@ RSpec.describe Alimento do
   
   it "El Pollo tiene menos lipidos que el Cerdo" do 
     expect(@Pollo < @Cerdo).to eq(true)
+  end
+  
+  it "El Yogurt y el Yogurt de limon son iguales en terminos de valores" do 
+    expect(@Yogurt == @YogurtLimon).to eq(true)
   end
 end 
 

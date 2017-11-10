@@ -19,6 +19,8 @@ class Alimentos
         end 
     end 
     
+
+    
     def v_energetico
         valor = (@proteinas * 4) + (@glucidos * 4) + (@lipidos * 9)
         valor
