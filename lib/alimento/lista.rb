@@ -40,24 +40,25 @@ class Lista
         @size = @size + 1
     end
     
+    
     def insertar_pos(nodo, indice)
         pos =  0
         aux = @cabeza
         if (indice - 1) == 0
-            insertar_cabeza(nodo)
+            insertar_cabeza(nodo) # Si la posicion es 0, es lo mismo que insertar por la cabeza.
             indice = 0
 
         end
         if indice - 1  > 0
-            #Mientras no estemos en la posicion deseada y tengamos siguiente
+            #Mientras no estemos en la posicion deseada y tengamos siguiente.
             while(pos != (indice - 1) && (aux.siguiente != nil))
-                if pos == (indice - 2)
+                if pos == (indice - 2) # Paramos una posicion antes para poder hacer las conexiones anteriores.
                     nodo[:siguiente] = aux.siguiente
                     nodo[:anterior] = aux
                     aux[:siguiente] = nodo
                     pos = pos + 1 
                 end
-                if pos == (indice - 1)
+                if pos == (indice - 1) # Terminamos de realizar las conexiones. 
                     aux = nodo.siguiente
                     aux[:anterior] = nodo
                 else
@@ -74,7 +75,7 @@ class Lista
     
     def insertar_mul(nodos, indice)
         for i in 0.. (nodos.length - 1)
-            insertar_pos(nodos[i], indice)
+            insertar_pos(nodos[i], indice) # Vamos llamando a la funcion insertar por posicion y le pasamos el nodo y aumentando la pos. 
             indice = indice + 1;
         end 
     end
@@ -126,6 +127,7 @@ class Lista
                   pos = pos + 1
                   aux = aux.siguiente
                 end
+                #Cuando encontramos la posicion tenemos que hacer los enlaces para que la lista sigua funcioando despues de la extraccion.
                 auxAnt = aux.anterior
                 auxSig = aux.siguiente
                 auxAnt[:siguiente] = auxSig

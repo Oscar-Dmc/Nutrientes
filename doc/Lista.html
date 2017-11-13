@@ -659,16 +659,16 @@
       <pre class="lines">
 
 
-158
-159
 160
 161
 162
 163
-164</pre>
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 158</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span>
     <span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='ivar'>@cabeza</span>
@@ -697,7 +697,6 @@
       <pre class="lines">
 
 
-82
 83
 84
 85
@@ -711,10 +710,11 @@
 93
 94
 95
-96</pre>
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_extrae_cabeza'>extrae_cabeza</span>
     <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_vacia'>vacia</span>
@@ -751,7 +751,6 @@
       <pre class="lines">
 
 
-98
 99
 100
 101
@@ -765,10 +764,11 @@
 109
 110
 111
-112</pre>
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_extrae_cola'>extrae_cola</span>
     <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_vacia'>vacia</span>
@@ -805,7 +805,6 @@
       <pre class="lines">
 
 
-114
 115
 116
 117
@@ -828,10 +827,12 @@
 134
 135
 136
-137</pre>
+137
+138
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 114</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_extrae_pos'>extrae_pos</span><span class='lparen'>(</span><span class='id identifier rubyid_indice'>indice</span><span class='rparen'>)</span>
     <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_vacia'>vacia</span>
@@ -848,7 +849,8 @@
               <span class='id identifier rubyid_pos'>pos</span> <span class='op'>=</span> <span class='id identifier rubyid_pos'>pos</span> <span class='op'>+</span> <span class='int'>1</span>
               <span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_siguiente'>siguiente</span>
             <span class='kw'>end</span>
-            <span class='id identifier rubyid_auxAnt'>auxAnt</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_anterior'>anterior</span>
+            <span class='comment'>#Cuando encontramos la posicion tenemos que hacer los enlaces para que la lista sigua funcioando despues de la extraccion.
+</span>            <span class='id identifier rubyid_auxAnt'>auxAnt</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_anterior'>anterior</span>
             <span class='id identifier rubyid_auxSig'>auxSig</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_siguiente'>siguiente</span>
             <span class='id identifier rubyid_auxAnt'>auxAnt</span><span class='lbracket'>[</span><span class='symbol'>:siguiente</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_auxSig'>auxSig</span>
             <span class='id identifier rubyid_auxSig'>auxSig</span><span class='lbracket'>[</span><span class='symbol'>:anterior</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_auxAnt'>auxAnt</span>
@@ -981,20 +983,20 @@
       <pre class="lines">
 
 
-75
 76
 77
 78
 79
-80</pre>
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_insertar_mul'>insertar_mul</span><span class='lparen'>(</span><span class='id identifier rubyid_nodos'>nodos</span><span class='comma'>,</span> <span class='id identifier rubyid_indice'>indice</span><span class='rparen'>)</span>
     <span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='int'>0</span><span class='op'>..</span> <span class='lparen'>(</span><span class='id identifier rubyid_nodos'>nodos</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span>
-        <span class='id identifier rubyid_insertar_pos'>insertar_pos</span><span class='lparen'>(</span><span class='id identifier rubyid_nodos'>nodos</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_indice'>indice</span><span class='rparen'>)</span>
-        <span class='id identifier rubyid_indice'>indice</span> <span class='op'>=</span> <span class='id identifier rubyid_indice'>indice</span> <span class='op'>+</span> <span class='int'>1</span><span class='semicolon'>;</span>
+        <span class='id identifier rubyid_insertar_pos'>insertar_pos</span><span class='lparen'>(</span><span class='id identifier rubyid_nodos'>nodos</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_indice'>indice</span><span class='rparen'>)</span> <span class='comment'># Vamos llamando a la funcion insertar por posicion y le pasamos el nodo y aumentando la pos. 
+</span>        <span class='id identifier rubyid_indice'>indice</span> <span class='op'>=</span> <span class='id identifier rubyid_indice'>indice</span> <span class='op'>+</span> <span class='int'>1</span><span class='semicolon'>;</span>
     <span class='kw'>end</span> 
 <span class='kw'>end</span></pre>
     </td>
@@ -1017,7 +1019,6 @@
       <pre class="lines">
 
 
-43
 44
 45
 46
@@ -1047,30 +1048,31 @@
 70
 71
 72
-73</pre>
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_insertar_pos'>insertar_pos</span><span class='lparen'>(</span><span class='id identifier rubyid_nodo'>nodo</span><span class='comma'>,</span> <span class='id identifier rubyid_indice'>indice</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_pos'>pos</span> <span class='op'>=</span>  <span class='int'>0</span>
     <span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='ivar'>@cabeza</span>
     <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_indice'>indice</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='int'>0</span>
-        <span class='id identifier rubyid_insertar_cabeza'>insertar_cabeza</span><span class='lparen'>(</span><span class='id identifier rubyid_nodo'>nodo</span><span class='rparen'>)</span>
-        <span class='id identifier rubyid_indice'>indice</span> <span class='op'>=</span> <span class='int'>0</span>
+        <span class='id identifier rubyid_insertar_cabeza'>insertar_cabeza</span><span class='lparen'>(</span><span class='id identifier rubyid_nodo'>nodo</span><span class='rparen'>)</span> <span class='comment'># Si la posicion es 0, es lo mismo que insertar por la cabeza.
+</span>        <span class='id identifier rubyid_indice'>indice</span> <span class='op'>=</span> <span class='int'>0</span>
 
     <span class='kw'>end</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_indice'>indice</span> <span class='op'>-</span> <span class='int'>1</span>  <span class='op'>&gt;</span> <span class='int'>0</span>
-        <span class='comment'>#Mientras no estemos en la posicion deseada y tengamos siguiente
+        <span class='comment'>#Mientras no estemos en la posicion deseada y tengamos siguiente.
 </span>        <span class='kw'>while</span><span class='lparen'>(</span><span class='id identifier rubyid_pos'>pos</span> <span class='op'>!=</span> <span class='lparen'>(</span><span class='id identifier rubyid_indice'>indice</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_siguiente'>siguiente</span> <span class='op'>!=</span> <span class='kw'>nil</span><span class='rparen'>)</span><span class='rparen'>)</span>
-            <span class='kw'>if</span> <span class='id identifier rubyid_pos'>pos</span> <span class='op'>==</span> <span class='lparen'>(</span><span class='id identifier rubyid_indice'>indice</span> <span class='op'>-</span> <span class='int'>2</span><span class='rparen'>)</span>
-                <span class='id identifier rubyid_nodo'>nodo</span><span class='lbracket'>[</span><span class='symbol'>:siguiente</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_siguiente'>siguiente</span>
+            <span class='kw'>if</span> <span class='id identifier rubyid_pos'>pos</span> <span class='op'>==</span> <span class='lparen'>(</span><span class='id identifier rubyid_indice'>indice</span> <span class='op'>-</span> <span class='int'>2</span><span class='rparen'>)</span> <span class='comment'># Paramos una posicion antes para poder hacer las conexiones anteriores.
+</span>                <span class='id identifier rubyid_nodo'>nodo</span><span class='lbracket'>[</span><span class='symbol'>:siguiente</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_siguiente'>siguiente</span>
                 <span class='id identifier rubyid_nodo'>nodo</span><span class='lbracket'>[</span><span class='symbol'>:anterior</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_aux'>aux</span>
                 <span class='id identifier rubyid_aux'>aux</span><span class='lbracket'>[</span><span class='symbol'>:siguiente</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo'>nodo</span>
                 <span class='id identifier rubyid_pos'>pos</span> <span class='op'>=</span> <span class='id identifier rubyid_pos'>pos</span> <span class='op'>+</span> <span class='int'>1</span> 
             <span class='kw'>end</span>
-            <span class='kw'>if</span> <span class='id identifier rubyid_pos'>pos</span> <span class='op'>==</span> <span class='lparen'>(</span><span class='id identifier rubyid_indice'>indice</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span>
-                <span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo'>nodo</span><span class='period'>.</span><span class='id identifier rubyid_siguiente'>siguiente</span>
+            <span class='kw'>if</span> <span class='id identifier rubyid_pos'>pos</span> <span class='op'>==</span> <span class='lparen'>(</span><span class='id identifier rubyid_indice'>indice</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span> <span class='comment'># Terminamos de realizar las conexiones. 
+</span>                <span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo'>nodo</span><span class='period'>.</span><span class='id identifier rubyid_siguiente'>siguiente</span>
                 <span class='id identifier rubyid_aux'>aux</span><span class='lbracket'>[</span><span class='symbol'>:anterior</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_nodo'>nodo</span>
             <span class='kw'>else</span>
                 <span class='id identifier rubyid_pos'>pos</span> <span class='op'>=</span> <span class='id identifier rubyid_pos'>pos</span> <span class='op'>+</span> <span class='int'>1</span>
@@ -1103,8 +1105,6 @@
       <pre class="lines">
 
 
-139
-140
 141
 142
 143
@@ -1112,10 +1112,12 @@
 145
 146
 147
-148</pre>
+148
+149
+150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 139</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 141</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
     <span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='ivar'>@cabeza</span>
@@ -1147,16 +1149,16 @@
       <pre class="lines">
 
 
-150
-151
 152
 153
 154
 155
-156</pre>
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 150</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/lista.rb', line 152</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_vacia'>vacia</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_size'>size</span><span class='op'>==</span><span class='int'>0</span>
@@ -1175,7 +1177,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 10 21:23:49 2017 by
+  Generated on Mon Nov 13 11:26:59 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.0).
 </div>
