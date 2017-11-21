@@ -1,15 +1,19 @@
+#@note Nodos para la lista que contendrá un valor, el nodo siguiente y el anterior enlazados.
 Nodo = Struct.new(:valor, :siguiente, :anterior) 
 
 class Lista
     attr_accessor :cabeza, :cola, :size
     include Enumerable
     
+    #@note Constructor de la clase lista 
     def initialize
         @cabeza = nil
         @cola = nil
         @size = 0
     end 
     
+    #@note Método para insertar un elemento por la cabeza de la lista
+    #@param Recibe como parámetro el nodo que queremos insertar. 
     def insertar_cabeza(nodo)
         if vacia
             nodo[:siguiente] = nil
@@ -25,6 +29,8 @@ class Lista
         @size = @size + 1 
     end
     
+    #@note Método para insertar un elemento por la cola de la lista
+    #@param Recibe como parámetro el nodo que queremos insertar. 
     def insertar_cola(nodo)
         if vacia
             nodo[:siguiente] = nil
@@ -40,19 +46,20 @@ class Lista
         @size = @size + 1
     end
     
-    
+    #@note Método para insertar un elemento en una posición determinada de la lista.
+    #@param Recibe como parámetro el nodo [nodo] que queremos insertar y la posición [Number] que ocupará. 
     def insertar_pos(nodo, indice)
         pos =  0
         aux = @cabeza
         if (indice - 1) == 0
-            insertar_cabeza(nodo) # Si la posicion es 0, es lo mismo que insertar por la cabeza.
+            insertar_cabeza(nodo) # Si la posición es 0, es lo mismo que insertar por la cabeza.
             indice = 0
 
         end
         if indice - 1  > 0
-            #Mientras no estemos en la posicion deseada y tengamos siguiente.
+            #Mientras no estemos en la posición deseada y tengamos siguiente.
             while(pos != (indice - 1) && (aux.siguiente != nil))
-                if pos == (indice - 2) # Paramos una posicion antes para poder hacer las conexiones anteriores.
+                if pos == (indice - 2) # Paramos una posición antes para poder hacer las conexiones anteriores.
                     nodo[:siguiente] = aux.siguiente
                     nodo[:anterior] = aux
                     aux[:siguiente] = nodo
@@ -73,13 +80,17 @@ class Lista
         end
     end
     
+    #@note Método para insertar varios elementos a partir de una determinada posición de la lista
+    #@param Recibe como parámetro el array de nodos[nodo[]] que queremos insertar y la posición desde la que se insertarán. 
     def insertar_mul(nodos, indice)
         for i in 0.. (nodos.length - 1)
-            insertar_pos(nodos[i], indice) # Vamos llamando a la funcion insertar por posicion y le pasamos el nodo y aumentando la pos. 
+            insertar_pos(nodos[i], indice) # Vamos llamando a la función insertar por posición y le pasamos el nodo y aumentando la pos. 
             indice = indice + 1;
         end 
     end
     
+    #@note Método para la extracción del primer elemento de la lista.
+    #@return Se devuelve y elimina el nodo situado en la primera posición de la lista. 
     def extrae_cabeza
         if !vacia
             if @cabeza == @cola
@@ -96,6 +107,8 @@ class Lista
         end
     end 
     
+    #@note Método para la extracción del último elemento de la lista.
+    #@return Se devuelve y extrae el nodo situado en la última posición de la lista. 
     def extrae_cola
         if !vacia
             if @cola == @cabeza
@@ -112,6 +125,9 @@ class Lista
         end
     end
     
+    #@note Método para la extracción del nodo situado en la posición determinada.
+    #@param Posición del nodo deseado para la extracción [Number].
+    #@return Se devuelve y extrae el nodo situado en la posición deseada. 
     def extrae_pos(indice)
         if !vacia
             pos = 0
@@ -127,7 +143,7 @@ class Lista
                   pos = pos + 1
                   aux = aux.siguiente
                 end
-                #Cuando encontramos la posicion tenemos que hacer los enlaces para que la lista sigua funcioando despues de la extraccion.
+                #Cuando encontramos la posición tenemos que hacer los enlaces para que la lista siga funcionando después de la extracción.
                 auxAnt = aux.anterior
                 auxSig = aux.siguiente
                 auxAnt[:siguiente] = auxSig
@@ -138,6 +154,8 @@ class Lista
         aux
     end
     
+    #@note Función para mostrar el contenido de la lista. 
+    #@return Lista formateada en una cadena para su visualización. 
     def to_s
         aux = @cabeza
         s = ""
@@ -149,6 +167,8 @@ class Lista
         
     end 
     
+    #@note Método para comprobar si la lista se encuentra vacía.
+    #@return Verdadero en el caso de que la lista no contenga ningún elemento, falso en caso contrario. 
     def vacia
         if size==0
             true
@@ -157,6 +177,7 @@ class Lista
         end
     end
     
+    #@note Método sobrecargado para el correcto funcionamiento del módulo enumerable
     def each
         aux = @cabeza
         while aux != nil
