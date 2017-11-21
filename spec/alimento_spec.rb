@@ -364,4 +364,17 @@ RSpec.describe Alimento do
     expect((@Chocolate.aibc(1) / @Azucar.aibc(1)) * 100).to  eq(22.83163265306124)
   end 
   
+  it "Calculo de indice glucemico del alimento" do
+    aux = (0..@CompManzana.datos.length - 1).map { |x| (@CompManzana.aibc(x) / @Azucar.aibc(x)) * 100}
+    igCompManz = aux.reduce(:+)/@CompManzana.datos.length - 1
+    aux = (0..@Yogurt.datos.length - 1).map { |x| (@Yogurt.aibc(x) / @Azucar.aibc(x)) * 100}
+    igYogurt = aux.reduce(:+)/@Yogurt.datos.length - 1
+    aux = (0..@Chocolate.datos.length - 1).map { |x| (@Chocolate.aibc(x) / @Azucar.aibc(x)) * 100}
+    igChocolate = aux.reduce(:+)/@Yogurt.datos.length - 1
+    
+    expect(igCompManz).to eq(51.21619897959183)
+    expect(igYogurt).to eq(40.28866390306122)
+    expect(igChocolate).to eq(14.029097576530623)
+  end 
+  
 end 
