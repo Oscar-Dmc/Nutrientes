@@ -326,17 +326,16 @@ end
 RSpec.describe Alimento do
   before :each do
     @CompManzana = AlimentoC.new("Compota de manzana", 4.1, 0.0, 9.5, "Frutas y derivados" )
+    @CompManzana.datos = [[6.7,6.5,6.8,6.9,7.0,7.1,6.9,6.9,6.9,6.7,6.9,7.3,7.0,7.0,7.2,7.1,6.8,7.2,7.3,7.0,6.8,6.7,6.8,6.7,6.9],
+                          [4.6,4.8,5.3,5.6,6.1,6.5,6.6,7.0,7.0,6.8,6.4,6.3,6.1,6.1,6.2,6.0,6.1,6.1,6.2,6.3,6.4,6.1,6.1,5.7,5.9]]
 
   end
   
-  it "Se pueden pasar los datos de los individuos." do 
-    @CompManzana.datos = [[6.7,6.5,6.8,6.9,7.0,7.1,6.9,6.9,6.9,6.7,6.9,7.3,7.0,7.0,7.2,7.1,6.8,7.2,7.3,7.0,6.8,6.7,6.8,6.7,6.9],
-                          [4.6,4.8,5.3,5.6,6.1,6.5,6.6,7.0,7.0,6.8,6.4,6.3,6.1,6.1,6.2,6.0,6.1,6.1,6.2,6.3,6.4,6.1,6.1,5.7,5.9]]
-                          
+  it "Se pueden pasar los datos de los individuos." do
     expect(@CompManzana.datos.size).to eq(2)
   end 
   
   it "Se dispone de un metodo para calcular AIBC de un alimento" do 
-    expect(@CompManzana.aibc).to eq(27.49999999999999)
+    expect(@CompManzana.aibc(0)).to eq(27.49999999999999)
   end 
 end 

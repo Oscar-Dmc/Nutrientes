@@ -40,5 +40,13 @@ class Alimentos
         s = "#{@proteinas}\t#{@glucidos}\t#{@lipidos}"
         s
     end
+    
+    def aibc (indice)
+        aux = []
+        datos[indice][1..datos[indice].length - 1].zip(datos[indice][0..datos[indice].length - 2]){
+            |x,y| aux << (((x-datos[indice][0])+(y-datos[indice][0]))/2)*5
+        }
+        aux.reduce(:+)
+    end 
 
 end 
