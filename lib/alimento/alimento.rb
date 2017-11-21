@@ -43,9 +43,13 @@ class Alimentos
     
     def aibc (indice)
         aux = []
-        datos[indice][1..datos[indice].length - 1].zip(datos[indice][0..datos[indice].length - 2]){
-            |x,y| aux << (((x-datos[indice][0])+(y-datos[indice][0]))/2)*5
-        }
+        datos[indice][1..datos[indice].length - 1].zip(datos[indice][0..datos[indice].length - 2]) do |x,y|
+            if x < datos[indice][0]
+                aux << 0.0
+            else
+                aux << (((x-datos[indice][0])+(y-datos[indice][0]))/2)*5
+            end 
+        end
         aux.reduce(:+)
     end 
 

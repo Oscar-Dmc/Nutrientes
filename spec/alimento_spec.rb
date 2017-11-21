@@ -349,7 +349,7 @@ RSpec.describe Alimento do
   end 
   
   it "Se dispone de un metodo para calcular AIBC de un alimento" do 
-    expect(@CompManzana.aibc(0)).to eq(27.49999999999999)
+    expect(@CompManzana.aibc(0)).to eq(27.999999999999993)
   end 
   
 end 
