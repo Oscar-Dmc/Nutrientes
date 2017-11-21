@@ -1,7 +1,7 @@
 
 #Clase padre de alimentos
 class Alimentos
-    attr_accessor :proteinas, :glucidos, :lipidos
+    attr_accessor :proteinas, :glucidos, :lipidos, :datos
     include Comparable
     
     def initialize(proteinasA, glucidosA, lipidosA)
