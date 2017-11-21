@@ -107,7 +107,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Clase padre de alimentos</p>
+<p>Clase padre de alimentos.</p>
 
 
   </div>
@@ -125,6 +125,33 @@
 
   <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
   <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#datos-instance_method" title="#datos (instance method)">#<strong>datos</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute datos.</p>
+</div></span>
+  
+</li>
+
     
       <li class="public ">
   <span class="summary_signature">
@@ -237,7 +264,10 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Si los valores de los objetos son iguales, devuelve 0, en caso de que el de
+este objeto sea menor, devolverá -1 y 1 en otro caso.</p>
+</div></span>
   
 </li>
 
@@ -259,7 +289,34 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Si ambos objetos son iguales en valor energético, devolverá verdadero, en
+cualquier otro caso, será falso el valor devuelto.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#aibc-instance_method" title="#aibc (instance method)">#<strong>aibc</strong>(indice)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Devuelve el valor de aibc para ese individuo.</p>
+</div></span>
   
 </li>
 
@@ -307,7 +364,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Devuelve la salida de un Alimento formateado.</p>
+</div></span>
   
 </li>
 
@@ -329,7 +388,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Calcula el valor energético de un alimento.</p>
+</div></span>
   
 </li>
 
@@ -353,13 +414,42 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Construcctor de la clase alimentos</p>
+</div>
+  </div>
+
+
 <p>Returns a new instance of Alimentos</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>Le</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>pasamos los datos necesarios para construir el alimento,  proteinas
+[Number], glucidos [Number] y lipidos [Number].</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 
 </div><table class="source_code">
   <tr>
@@ -367,14 +457,14 @@
       <pre class="lines">
 
 
-7
 8
 9
 10
-11</pre>
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_proteinasA'>proteinasA</span><span class='comma'>,</span> <span class='id identifier rubyid_glucidosA'>glucidosA</span><span class='comma'>,</span> <span class='id identifier rubyid_lipidosA'>lipidosA</span><span class='rparen'>)</span>
     <span class='ivar'>@proteinas</span> <span class='op'>=</span> <span class='id identifier rubyid_proteinasA'>proteinasA</span>
@@ -392,9 +482,52 @@
     <h2>Instance Attribute Details</h2>
     
       
-      <span id="glucidos=-instance_method"></span>
+      <span id="datos=-instance_method"></span>
       <div class="method_details first">
-  <h3 class="signature first" id="glucidos-instance_method">
+  <h3 class="signature first" id="datos-instance_method">
+  
+    #<strong>datos</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute datos</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3
+4
+5</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 3</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_datos'>datos</span>
+  <span class='ivar'>@datos</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="glucidos=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="glucidos-instance_method">
   
     #<strong>glucidos</strong>  &#x21d2; <tt>Object</tt> 
   
@@ -419,12 +552,12 @@
       <pre class="lines">
 
 
+3
 4
-5
-6</pre>
+5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_glucidos'>glucidos</span>
   <span class='ivar'>@glucidos</span>
@@ -462,12 +595,12 @@
       <pre class="lines">
 
 
+3
 4
-5
-6</pre>
+5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_lipidos'>lipidos</span>
   <span class='ivar'>@lipidos</span>
@@ -505,12 +638,12 @@
       <pre class="lines">
 
 
+3
 4
-5
-6</pre>
+5</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 4</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 3</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_proteinas'>proteinas</span>
   <span class='ivar'>@proteinas</span>
@@ -536,16 +669,72 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Sobrecargamos el operador distinto para que funcione el Módulo Comparable.
+Comparación efectuada según el valor energético.</p>
+</div>
+  </div>
+
+
+<p>Returns Si los valores de los objetos son iguales, devuelve 0, en caso de
+que el de este objeto sea menor, devolverá -1 y 1 en otro caso.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>Objeto</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>del tipo alimento con el cual se efectuará la comparación.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Si los valores de los objetos son iguales, devuelve 0, en caso de que el de
+este objeto sea menor, devolverá -1 y 1 en otro caso.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-13
-14
-15
-16
 17
 18
 19
@@ -553,13 +742,17 @@
 21
 22
 23
-24</pre>
+24
+25
+26
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 17</span>
 
-<span class='kw'>def</span> <span class='op'>&lt;=&gt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_otro'>otro</span><span class='rparen'>)</span>
-    <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_otro'>otro</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='const'>Alimentos</span> <span class='comment'>#Si el otro objeto no es de tipo Alimentos devuelve nulo
+<span class='kw'>def</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_otro'>otro</span>
+    <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_otro'>otro</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='const'>Alimentos</span> <span class='comment'>#Si el otro objeto no es de tipo Alimentos devuelve nulo.
 </span>    <span class='kw'>if</span> <span class='id identifier rubyid_v_energetico'>v_energetico</span> <span class='op'>==</span> <span class='id identifier rubyid_otro'>otro</span><span class='period'>.</span><span class='id identifier rubyid_v_energetico'>v_energetico</span>
         <span class='kw'>return</span> <span class='int'>0</span> 
     <span class='kw'>else</span>
@@ -584,29 +777,184 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Sobrecargamos el operador igual para que funcione el Módulo Comparable.
+Comparación efectuada según el valor energético.</p>
+</div>
+  </div>
+
+
+<p>Returns Si ambos objetos son iguales en valor energético, devolverá
+verdadero, en cualquier otro caso, será falso el valor devuelto.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>Objeto</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>del tipo alimento con el cual se efectuará la comparación.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Si ambos objetos son iguales en valor energético, devolverá verdadero, en
+cualquier otro caso, será falso el valor devuelto.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-26
-27
-28
-29
-30
-31
-32</pre>
+33
+34
+35
+36
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 33</span>
 
-<span class='kw'>def</span> <span class='op'>==</span> <span class='lparen'>(</span><span class='id identifier rubyid_otro'>otro</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='op'>==</span> <span class='id identifier rubyid_otro'>otro</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_otro'>otro</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='const'>Alimentos</span>
         <span class='id identifier rubyid_v_energetico'>v_energetico</span> <span class='op'>==</span> <span class='id identifier rubyid_otro'>otro</span><span class='period'>.</span><span class='id identifier rubyid_v_energetico'>v_energetico</span>
     <span class='kw'>else</span>
         <span class='kw'>false</span>
     <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="aibc-instance_method">
+  
+    #<strong>aibc</strong>(indice)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Devuelve el valor de aibc para ese individuo.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>Se</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>pasa el indice de del individuo al que acceder.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Devuelve el valor de aibc para ese individuo.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_aibc'>aibc</span> <span class='id identifier rubyid_indice'>indice</span>
+    <span class='id identifier rubyid_aux'>aux</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_datos'>datos</span><span class='lbracket'>[</span><span class='id identifier rubyid_indice'>indice</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='id identifier rubyid_datos'>datos</span><span class='lbracket'>[</span><span class='id identifier rubyid_indice'>indice</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_datos'>datos</span><span class='lbracket'>[</span><span class='id identifier rubyid_indice'>indice</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_datos'>datos</span><span class='lbracket'>[</span><span class='id identifier rubyid_indice'>indice</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>-</span> <span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span><span class='op'>|</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_datos'>datos</span><span class='lbracket'>[</span><span class='id identifier rubyid_indice'>indice</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+            <span class='id identifier rubyid_aux'>aux</span> <span class='op'>&lt;&lt;</span> <span class='float'>0.0</span>
+        <span class='kw'>else</span>
+            <span class='id identifier rubyid_aux'>aux</span> <span class='op'>&lt;&lt;</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='op'>-</span><span class='id identifier rubyid_datos'>datos</span><span class='lbracket'>[</span><span class='id identifier rubyid_indice'>indice</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='op'>+</span><span class='lparen'>(</span><span class='id identifier rubyid_y'>y</span><span class='op'>-</span><span class='id identifier rubyid_datos'>datos</span><span class='lbracket'>[</span><span class='id identifier rubyid_indice'>indice</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='op'>/</span><span class='int'>2</span><span class='rparen'>)</span><span class='op'>*</span><span class='int'>5</span>
+        <span class='kw'>end</span> 
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_aux'>aux</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='symbol'>:+</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -622,19 +970,56 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Método para la correcta visualización del alimento.</p>
+</div>
+  </div>
+
+
+<p>Returns Devuelve la salida de un Alimento formateado.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Devuelve la salida de un Alimento formateado.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-39
-40
-41
-42</pre>
+50
+51
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 50</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
     <span class='id identifier rubyid_s'>s</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@proteinas</span><span class='embexpr_end'>}</span><span class='tstring_content'>\t</span><span class='embexpr_beg'>#{</span><span class='ivar'>@glucidos</span><span class='embexpr_end'>}</span><span class='tstring_content'>\t</span><span class='embexpr_beg'>#{</span><span class='ivar'>@lipidos</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -654,19 +1039,56 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Método para realizar el cálculo del valor energético.</p>
+</div>
+  </div>
+
+
+<p>Returns Calcula el valor energético de un alimento.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Calcula el valor energético de un alimento.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-34
-35
-36
-37</pre>
+43
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/alimento/alimento.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_v_energetico'>v_energetico</span>
     <span class='id identifier rubyid_valor'>valor</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='ivar'>@proteinas</span> <span class='op'>*</span> <span class='int'>4</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='ivar'>@glucidos</span> <span class='op'>*</span> <span class='int'>4</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='ivar'>@lipidos</span> <span class='op'>*</span> <span class='int'>9</span><span class='rparen'>)</span>
@@ -682,7 +1104,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 13 11:26:59 2017 by
+  Generated on Tue Nov 21 23:15:19 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.0).
 </div>
