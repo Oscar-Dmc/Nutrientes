@@ -6,11 +6,7 @@
 * Desarrollar una clase Ruby para representar Alimentos
 * Para el desarrollo de la clase utilizar la metodología de desarrollo dirigido por pruebas (Test Driven Development - TDD) y la herramienta RSpec.
 
-
 # Alimento
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/alimento`. To experiment with that code, run `bin/console` for an interactive prompt.
-
 
 ## Installation
 
@@ -29,8 +25,6 @@ Or install it yourself as:
     $ gem install alimento
 
 ## Usage
-
-
 
 ## Development
 
