@@ -184,5 +184,7 @@ class Lista
             yield aux.valor
             aux = aux.siguiente
         end 
-    end 
-end 
+    end
+    
+
+end  

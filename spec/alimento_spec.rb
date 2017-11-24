@@ -257,6 +257,16 @@ RSpec.describe Lista do
       expect(@lista).to respond_to(:to_s)
       puts @lista.to_s
     end 
+    
+  describe "Pruebas práctica 10" do
+    
+    it "Conversion a array " do
+      aux = []
+      aux = @lista.convertArray(@lista)
+      expect(@lista.size).to eq(aux.length)
+    end 
+
+  end 
 end
 
 
