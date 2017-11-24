@@ -265,6 +265,14 @@ RSpec.describe Lista do
       aux = @lista.convertArray(@lista)
       expect(@lista.size).to eq(aux.length)
     end 
+    
+    it "Ordenación con for" do 
+      aux = []
+      aux =  @lista.ordenarFor(@lista)
+      
+      expect(aux[1]).to eq(@HuevoFrito)
+      expect(aux[22]).to eq(@Tomate)
+    end 
 
   end 
 end
