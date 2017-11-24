@@ -186,5 +186,11 @@ class Lista
         end 
     end
     
-
+    #@note Método para convertie una lista a un array. 
+    #@param lista[Lista]
+    #@return [Array]
+    
+    def convertArray lista
+        lista.map{ |x| }
+    end 
 end  
