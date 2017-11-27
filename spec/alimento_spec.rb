@@ -270,8 +270,8 @@ RSpec.describe Lista do
       aux = []
       aux =  @lista.ordenarFor(@lista)
       
-      expect(aux[1]).to eq(@HuevoFrito)
-      expect(aux[22]).to eq(@Tomate)
+      expect(aux[0]).to eq(@Tomate)
+      expect(aux[21]).to eq(@Pera)
     end 
 
   end 

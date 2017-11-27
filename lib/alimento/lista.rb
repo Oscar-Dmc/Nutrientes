@@ -186,11 +186,32 @@ class Lista
         end 
     end
     
-    #@note Método para convertie una lista a un array. 
+    #@note Método para convertir una lista a un array. 
     #@param lista[Lista]
     #@return [Array]
-    
     def convertArray lista
-        lista.map{ |x| }
+        lista.map { |x| x}
+    end 
+    
+    #@note Método para ordenar un array creado a partir de una lista. 
+    #@param lista[Lista]
+    #@return [Array]
+    def ordenarFor lista
+        auxList = lista.convertArray lista
+        indice  = 0
+        indOrd = 0
+        for i in 0..(auxList.length - 1) do
+            if(auxList[indOrd].v_energetico > auxList[i].v_energetico)
+                indOrd = i 
+            end 
+            if(i == auxList.length - 1)
+                valAux = auxList[indice]
+                auxList[indice] = auxList[indOrd]
+                auxList[indOrd] = valAux
+                indice++
+                i = indice
+            end 
+        end
+        auxList
     end 
 end  
