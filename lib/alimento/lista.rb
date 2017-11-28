@@ -230,5 +230,6 @@ class Lista
             indice = 0
         end
         auxList
-    end 
+    end
+    
 end  
