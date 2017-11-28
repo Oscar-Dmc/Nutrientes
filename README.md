@@ -1,4 +1,4 @@
-# Práctica #6 TDD (Test Driven Development)
+# Práctica #6 TDD (Test Driven Development) [![Coverage Status](https://coveralls.io/repos/github/alu0100705638/Nutrientes/badge.svg)](https://coveralls.io/github/alu0100705638/Nutrientes)
 
 ## Autor: Óscar David Martín Cabrera
 
