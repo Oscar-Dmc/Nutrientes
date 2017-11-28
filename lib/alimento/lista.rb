@@ -198,20 +198,36 @@ class Lista
     #@return [Array]
     def ordenarFor lista
         auxList = lista.convertArray lista
-        indice  = 0
-        indOrd = 0
-        for i in 0..(auxList.length - 1) do
-            if(auxList[indOrd].v_energetico > auxList[i].v_energetico)
-                indOrd = i 
-            end 
-            if(i == auxList.length - 1)
-                valAux = auxList[indice]
-                auxList[indice] = auxList[indOrd]
-                auxList[indOrd] = valAux
-                indice++
-                i = indice
+        for i in 0..(auxList.length) do
+            for j in 0..(auxList.length-2) do 
+                if(auxList[j] > auxList[j+1])
+                    temporal = auxList[j]
+                    auxList[j] = auxList[j+1]
+                    auxList[j+1] = temporal 
+                end
             end 
         end
         auxList
+    end 
+    
+    #@note Método para ordenar un array creado a partir de una lista. 
+    #@param lista[Lista]
+    #@return [Array]
+    def ordenarEach lista
+        auxList = lista.convertArray lista 
+        auxCopia = auxList
+        auxOrd = []
+        auxList.each do |x|
+            alimento = x
+            auxCopia.each do |y|
+                if alimento.v_energetico > y.v_energetico
+                    alimento = y
+                end
+            end
+            auxOrd.push(alimento)
+            auxCopia.delete(alimento)
+            auxLista.delete(alimento)
+        end 
+        auxOrd.each{ |z| puts z.to_s}
     end 
 end  
