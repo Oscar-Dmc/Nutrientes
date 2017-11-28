@@ -215,5 +215,20 @@ class Lista
     #@return [Array]
     def ordenarEach lista
         auxList = lista.convertArray lista 
+        indice = 0
+        auxList.each do |x|
+            auxList.each do |y|
+                if (indice < auxList.length-1)
+                    if (auxList[indice] > auxList[indice+1])
+                        temporal = auxList[indice]
+                        auxList[indice] = auxList[indice+1]
+                        auxList[indice+1] = temporal 
+                    end
+                end
+                indice = indice+1
+            end
+            indice = 0
+        end
+        auxList
     end 
 end  

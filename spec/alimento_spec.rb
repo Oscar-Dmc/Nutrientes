@@ -276,8 +276,9 @@ RSpec.describe Lista do
     
     it "Ordenación con el método each" do 
       aux = []
-      aux =  @lista.ordenarEach(@lista)
+      aux = @lista.ordenarEach(@lista)
       
+      puts aux.each{ |x| x.to_s}
       expect(aux[0]).to eq(@Tomate)
       expect(aux[21]).to eq(@AceiteOliva)
     end 
