@@ -215,19 +215,5 @@ class Lista
     #@return [Array]
     def ordenarEach lista
         auxList = lista.convertArray lista 
-        auxCopia = auxList
-        auxOrd = []
-        auxList.each do |x|
-            alimento = x
-            auxCopia.each do |y|
-                if alimento.v_energetico > y.v_energetico
-                    alimento = y
-                end
-            end
-            auxOrd.push(alimento)
-            auxCopia.delete(alimento)
-            auxLista.delete(alimento)
-        end 
-        auxOrd.each{ |z| puts z.to_s}
     end 
 end  
