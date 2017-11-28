@@ -232,4 +232,12 @@ class Lista
         auxList
     end
     
+    #@note Método para ordenar un array creado a partir de una lista usando el método sort
+    #@param lista[Lista]
+    #@return [Array]
+    def ordenarSort lista
+        auxList = lista.convertArray lista 
+        auxList.sort
+    end 
+    
 end  
