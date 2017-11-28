@@ -3,8 +3,6 @@ require "./lib/alimento/alimento.rb"
 require "./lib/alimento/lista.rb"
 require "./lib/alimento/alimentoC.rb"
 require 'benchmark'
-
-
 include Benchmark
 
 RSpec.describe Alimento do
