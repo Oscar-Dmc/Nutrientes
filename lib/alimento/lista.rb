@@ -4,6 +4,7 @@ Nodo = Struct.new(:valor, :siguiente, :anterior)
 class Lista
     attr_accessor :cabeza, :cola, :size
     include Enumerable
+    #include Benchmark
     
     #@note Constructor de la clase lista 
     def initialize
