@@ -108,11 +108,12 @@ RSpec.describe Lista do
   end 
   
   it "Se puede insertar un elemento en la pos x" do 
-    @lista.insertar_cabeza(@nodoA2)
-    @lista.insertar_cabeza(@nodoA1)
+    @lista.insertar_pos(@nodoA2,1)
+    @lista.insertar_pos(@nodoA1,1)
     @lista.insertar_pos(@nodoA3, 2)
   
     expect(@lista.cabeza.siguiente).to eq(@nodoA3)
+    expect(@lista.insertar_pos(@nodoA4,0)).to eq("La posicion se encuentra fuera de rango")
     expect(@lista.size).to eq(3)
   end 
   
