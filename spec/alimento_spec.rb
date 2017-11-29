@@ -360,6 +360,11 @@ RSpec.describe Alimento do
     expect(@Yogurt == @YogurtLimon).to eq(true)
   end
   
+  it "Comprobación de la sobrecarga con valores concretos" do
+    expect(@HuevoFrito < @HuevoFrito).to eq(false)
+    expect(@HuevoFrito == 3).to eq(false)
+  end 
+  
   it "Pruebas para utilizar el Mixin Enumerable - Funcion maximo en la clase lista" do
     expect(@lista.max).to eq(@HuevoFrito)
   end 
