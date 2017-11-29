@@ -138,6 +138,16 @@ RSpec.describe Lista do
     expect(@lista.size).to eq(3)
   end 
   
+  it "Extracciones particulares" do
+    @lista.insertar_cabeza(@nodoA1)
+    @lista.extrae_cabeza
+    expect(@lista.size).to eq(0)
+    
+    @lista.insertar_cola(@nodoA2)
+    @lista.extrae_cola
+    expect(@lista.size).to eq(0)
+  end 
+  
   it "Se extrae el ultimo elemento" do 
     @lista.insertar_cabeza(@nodoA2)
     @lista.insertar_cabeza(@nodoA1)
